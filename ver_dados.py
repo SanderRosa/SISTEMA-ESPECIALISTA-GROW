@@ -1,0 +1,13 @@
+import sqlite3
+
+conn = sqlite3.connect("grow.db")
+cursor = conn.cursor()
+
+cursor.execute("SELECT * FROM leituras")
+
+dados = cursor.fetchall()
+
+for linha in dados:
+    print(linha)
+
+conn.close()
